@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'songs',
+
 ]
 
 MIDDLEWARE = [
@@ -120,6 +121,10 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [ 
     BASE_DIR / 'static',
 ]
+
+CLIENT_ID = '38287b8afbcd4f7d902bd3b3a6aa0587'
+CLIENT_SECRET = '35492af0fc3c4459aef79dc9efd65554'
+REDIRECT_URI = "http://localhost:8000"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

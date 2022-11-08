@@ -6,14 +6,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/master.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Song Recommender</title>
 </head>
 <body>
+    <nav>
+        <div class="container">
+            <h1 class="logo">Songify</h1>
 
+            <div class='menu'>
+                {% if user.is_authenticated %}
+                <a href="#" class='is-active'>Home</a>
+                <a href="#">Playlist Generator</a>
+                <a href="#">Daily Song</a>
+                <a href="#">Genre Song</a>
+                <a href="#">Connect</a>
+                <a href="#">Logout</a>
+                {% else %}
+                <a href="#" class="is-active">Home</a>
+                <a href="#">Connect</a>
+                <a href="#">Sign Up</a>
+                <a href="#">Login</a>
+                {% endif %}
+            </div>
 
+            <button class='hamburger'>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class='mobile-menu is-open'>
+                {% if user.is_authenticated %}
+                <a href="#" class='is-active'>Home</a>
+                <a href="#">Playlist Generator</a>
+                <a href="#">Daily Song</a>
+                <a href="#">Genre Song</a>
+                <a href="#">Connect</a>
+                <a href="#">Logout</a>
+                {% else %}
+                <a href="#" class="is-active">Home</a>
+                <a href="#">Connect</a>
+                <a href="#">Sign Up</a>
+                <a href="#">Login</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
     {% block content %}
 
     {% endblock content %}
     
+
+    <script src="{% static 'js/master.js' %}"></script>
 </body>
 </html>
