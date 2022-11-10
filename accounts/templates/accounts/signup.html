@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<form method="POST">
+    <h1>Register Here!</h1>
+    {% csrf_token %}
+
+    {{ form.username.errors }}
+    {% render_field form.username %}
+ 
+    {{ form.email.errors }}
+    {% render_field form.email %}
+ 
+    {{ form.password1.errors }}
+    {% render_field form.password1 %}
+  
+    {{ form.password2.errors }}
+    {% render_field form.password2 %}
+
+    <input type='submit' value='Sign Up'>
+</form>
+
+{% endblock content %}
+
+
+

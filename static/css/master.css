@@ -1,4 +1,5 @@
 :root{
+    --background: #004643;
     --primary: #f9bc60;
     --light: #fffffe;
 }
@@ -116,7 +117,7 @@ nav{
 }
 
 @media (min-width: 768px){
-    .hamburger{
+    .mobile-menu, .hamburger{
         display: none;
     }
 
@@ -136,7 +137,7 @@ nav{
     padding-top: 6rem;
     opacity: 0;
     transform: translateY(-100%);
-    background-color: #004643;
+    background-color: var(--background);
     color: var(--light);
     transition: 0.3s;
 
@@ -148,6 +149,7 @@ nav{
 }
 
 .mobile-menu a{
+
     display: block;
     padding: 1rem;
     color: var(--light);
@@ -155,10 +157,15 @@ nav{
     text-decoration: none;
     font-size: 1.25rem;
     transition: 0.3s;
+
 }
 
 .mobile-menu a:hover{
     color: var(--light);
     background-color: var(--primary)
 
+}
+
+.body_content{
+    padding-top: 5.5em;
 }
