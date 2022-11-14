@@ -126,7 +126,7 @@ STATICFILES_DIRS = [
 
 CLIENT_ID = '38287b8afbcd4f7d902bd3b3a6aa0587'
 CLIENT_SECRET = '35492af0fc3c4459aef79dc9efd65554'
-REDIRECT_URI = "http://localhost:8000"
+REDIRECT_URI = "http://127.0.0.1:8000/songs/"
 
 
 LOGIN_REDIRECT_URL = 'homepage'

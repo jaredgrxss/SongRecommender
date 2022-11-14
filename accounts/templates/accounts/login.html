@@ -2,25 +2,14 @@
 {% load widget_tweaks %}
 
 {% block content %}
-<div class="form-container">
-    <div class='forms'>
-        <div class="form-login">
-            <h1 class='form-title'>Login</h1>
-        </div>
-        <form method="POST">
-            {% csrf_token %}
-            <div class="input-field"></div>
-                {{ form.username.errors }}
-                {% render_field form.username %}
-                <i class="'uil uil-user"></i>
-            </div>
-            <div class="input-field">
-                {{ form.password.errors }}
-                {% render_field form.password %}
-                <i class="'uil uil-lock"></i>
-            </div>
-            <input type='submit' value="Login">
-        </form>
-    </div>
+
+<div class="main-form">
+<form method="POST" class="center-form">
+    <h1 class="form-message">Login</h1>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Login" class="styled-button">
+</form>
 </div>
+
 {% endblock content %}

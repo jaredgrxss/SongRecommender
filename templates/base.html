@@ -20,14 +20,12 @@
 
             <div class='menu'>
                 {% if user.is_authenticated %}
-                <a href="#" class='is-active' id="homepage">Home</a>
-                <a href="#" id="playlist_gen">Playlist Creator</a>
-                <a href="#" id="daily_song">Daily Song</a>
-                <a href="#" id="genre_song">Genre Song</a>
+                <a href="{% url 'homepage' %}" class='is-active' id="homepage">Home</a>
+                <a href="{% url 'songs:spotify-login' %}">Songify</a>
                 <a href="#" id="connect">Connect</a>
                 <a href="{% url 'accounts:logout' %}" id="logout">Logout</a>
                 {% else %}
-                <a href="#" class="is-active" id="homepage">Home</a>
+                <a href="{% url 'homepage' %}" class="is-active" id="homepage">Home</a>
                 <a href="#" id="connect">Connect</a>
                 <a href="{% url 'accounts:signup' %}" id="signup">Sign Up</a>
                 <a href="{% url 'accounts:login' %}" id="login">Login</a>
@@ -45,9 +43,7 @@
     <div class='mobile-menu'>
         {% if user.is_authenticated %}
         <a href="#">Home</a>
-        <a href="#">Playlist Generator</a>
-        <a href="#">Daily Song</a>
-        <a href="#">Genre Song</a>
+        <a href="{% url 'songs:spotify-login' %}">Songify</a>
         <a href="#">Connect</a>
         <a href="#">Logout</a>
         {% else %}
@@ -64,7 +60,7 @@
 
     {% endblock content %}
     <div>
-
+    <script src="https://unpkg.com/htmx.org@1.8.4" integrity="sha384-wg5Y/JwF7VxGk4zLsJEcAojRtlVp1FKKdGy1qN+OMtdq72WRvX/EdRdqg/LOhYeV" crossorigin="anonymous"></script>
     <script src="{% static 'js/master.js' %}"></script>
 </body>
 </html>

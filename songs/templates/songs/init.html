@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+<!--
+<h2>{{ request.session.access_token }}</h2>
+<h2>{{ request.session.refresh_token }}<h2>
+<h2>{{ request.session.expires_in }} <h2>
+-->
+{% block content %}
+
+
+<h1>Welcome!</h1>
+<h2> First, we need to select a mode for songify...<h2>
+<button class='styled-button'>Song of the Day</button>
+<button class='styled-button'>Playlist Generator</button>
+<a hx-get="{% url 'songs:random' %}" hx-target="#Songify-Mode"><button class='styled-button'>Random Song</button></a>
+
+
+<div id='Songify-Mode'>
+    <h2> Currently, no mode is selected! </h2>
+</div>
+{% endblock content %}

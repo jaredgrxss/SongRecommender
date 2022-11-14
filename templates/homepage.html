@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1> Homepage <h1> 
+<h1 class='title-text'> Enhancing Music<h1> 
+<h3 class='slogan-text'> one song at a time </h3>
+{% if user.is_authenticated %}
+<div class='center-button'>
+<a href="{% url 'songs:spotify-login' %}"><button class='styled-home-button'>Get Started</button></a>
+</div>
+{% else %}
+<div class='center-button'>
+<a href='{% url "accounts:signup" %}'><button class='styled-home-button'> Sign Up</button></a>
+</div>
+{% endif %}
 {% endblock content %}

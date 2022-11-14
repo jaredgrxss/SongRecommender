@@ -99,6 +99,8 @@ nav{
     flex: 1 1 0%;
     justify-content: flex-end;
     margin: 0 -16px;
+    margin-left: 6px;
+
 
 }
 
@@ -168,4 +170,156 @@ nav{
 
 .body_content{
     padding-top: 5.5em;
+}
+
+::placeholder{
+    color: black;
+}
+
+
+.input-fields{
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #eee;
+    box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius: 10px;
+    height: 30px;
+    font-size: 17px;
+    font-weight: 600;
+    width: 50%;
+}
+
+.styled-button {
+    appearance: none;
+    padding: 10px;
+    border: none;
+    text-transform: uppercase;
+    background-color: var(--primary);
+    font-weight: 900;
+    border-radius: 20px;
+    cursor: pointer;
+    color: black;
+    box-shadow: 5px 5px 5px #001e1d;
+    width: 30%;
+    transition: 0.5s;
+}
+
+.styled-button:hover{
+    box-shadow: none;
+}
+
+form{
+    
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top: 10%;
+    background-color: #abd1c6;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border-radius: 25px;
+    border: 5px solid black;
+
+}
+
+.form-message{
+    color: black;
+    font-weight: 900;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+}
+
+.title-text::before{
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+.title-text:hover::before{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.title-text::before{
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    inset: 0 0 0 0;
+    background: var(--primary);
+    z-index: -1;
+    transition: transform .3s ease;
+}
+
+.title-text{
+    display: grid;
+    position: relative;
+    text-transform: uppercase;
+    margin-top: 2.5em;
+    font-size: 3.5em;
+    text-align: center;
+    color: var(--light);
+
+}
+
+
+
+
+
+
+@media(orientation: landscape){
+    body {
+        grid-auto-flow: column;
+    }
+}
+
+
+.slogan-text{
+    text-align: uppercase;
+    text-align: center;
+    font-size: 2em;
+    color: var(--light);
+    font-style: italic;
+}
+
+
+.styled-home-button {
+    appearance: none;
+    padding: 10px;
+    border: none;
+    text-transform: uppercase;
+    background-color: var(--primary);
+    font-weight: 900;
+    border-radius: 20px;
+    cursor: pointer;
+    color: black;
+    box-shadow: 5px 5px 5px #001e1d;
+    width: 30%;
+    margin-top: 3.5em;
+    height: 3.5em;
+    transition: 0.5s;
+}
+
+.styled-home-button:hover{
+    box-shadow: none;
+}
+
+.center-button{
+    text-align: center;
+}
+
+.go-to-login{
+    color: black;
+    font-weight: 900;
+
+}
+
+.go-to-login-link{
+    text-decoration: none;
+    color: var(--background);
 }

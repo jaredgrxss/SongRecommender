@@ -3,24 +3,15 @@
 
 {% block content %}
 
-<form method="POST">
-    <h1>Register Here!</h1>
+<div class="main-form">
+<form method="POST" class="center-form">
+    <h1 class="form-message">Register</h1>
     {% csrf_token %}
-
-    {{ form.username.errors }}
-    {% render_field form.username %}
- 
-    {{ form.email.errors }}
-    {% render_field form.email %}
- 
-    {{ form.password1.errors }}
-    {% render_field form.password1 %}
-  
-    {{ form.password2.errors }}
-    {% render_field form.password2 %}
-
-    <input type='submit' value='Sign Up'>
+    {{ form.as_p }}
+    <input type="submit" value="Register" class="styled-button">
+    <p class='go-to-login'>Already have an account? Login <a class='go-to-login-link' href="{% url 'accounts:login' %}">here</p>
 </form>
+</div>
 
 {% endblock content %}
 
