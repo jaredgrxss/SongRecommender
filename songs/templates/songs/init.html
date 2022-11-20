@@ -8,15 +8,23 @@
 -->
 {% block content %}
 
+<div class='intro'>
+    <h1 class='logo-header'>
+        <span class='trans'>Music</span>
+        <span class='trans'>Made</span>
+        <span class='trans'>Simple</span>
+    </h1>
+</div>
 
-<h1>Welcome!</h1>
-<h2> First, we need to select a mode for songify...<h2>
-<button class='styled-button'>Song of the Day</button>
-<button class='styled-button'>Playlist Generator</button>
-<a hx-get="{% url 'songs:random' %}" hx-target="#Songify-Mode"><button class='styled-button'>Random Song</button></a>
-
+<h1 class='main-header'>Welcome {{ request.session.user_name }}!</h1>
+<h2 class='main-underheader'> First, we need to select a mode for songify<h2>
+<div class='three-button-center'>
+<button class='styled-main-button'>Song of the Day</button>
+<button hx-get="{% url 'songs:playlist' %}" class='styled-main-button' hx-target="#Songify-Mode">Playlist Generator</button>
+<a hx-get="{% url 'songs:random' %}" hx-target="#Songify-Mode"><button class='styled-main-button'>Random Song</button></a>
+</div>
 
 <div id='Songify-Mode'>
-    <h2> Currently, no mode is selected! </h2>
+    <h2 class='modeReminder'> Currently, no mode is selected! </h2>
 </div>
 {% endblock content %}

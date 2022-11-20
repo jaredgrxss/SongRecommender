@@ -14,6 +14,7 @@
     <title>Song Recommender</title>
 </head>
 <body>
+    
     <nav>
         <div class="container">
             <h1 class="logo">Songify</h1>
@@ -61,6 +62,12 @@
     {% endblock content %}
     <div>
     <script src="https://unpkg.com/htmx.org@1.8.4" integrity="sha384-wg5Y/JwF7VxGk4zLsJEcAojRtlVp1FKKdGy1qN+OMtdq72WRvX/EdRdqg/LOhYeV" crossorigin="anonymous"></script>
+    <script>
+        document.body.addEventListener('htmx:configRequest', (event) => {
+          event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+        })
+    </script>
     <script src="{% static 'js/master.js' %}"></script>
+   
 </body>
 </html>

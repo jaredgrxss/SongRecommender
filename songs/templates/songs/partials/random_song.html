@@ -1,7 +1,9 @@
-<div>
-<form>
-    <h2>Select a genre to get a random song playing!</h2>
-{% csrf_token %}
-{{ form.as_p}}
-</form>
+<div hx-target='this' hx-swap='outerHTML'>
+    <form method="POST">
+        <h2>Select a Genre!</h2>
+        <p>For the best experience, open your spotify app! </p>
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button hx-post="{% url 'songs:random' %}"class='styled-button'>Find me a song!</button>
+    </form>
 </div>

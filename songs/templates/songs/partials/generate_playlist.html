@@ -1,0 +1,8 @@
+<div hx-target='this' hx-swap='outerHTML'>
+    <form>
+        <h2>Select Your Top Three Genres</h2>
+        <h4>We will make a custom, 15 song playlist designed just for your taste!</h4>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button hx-post="{% url 'songs:playlist' %}" class='styled-button'>Make My Playlist!</button>
+</div>

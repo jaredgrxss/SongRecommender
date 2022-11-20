@@ -1,0 +1,19 @@
+<div hx-target='this' hx-swap='outerHTML'>
+    <h1 style='text-align: center; color: var(--light); margin-bottom: 5px;'>Below are the songs we think you'd love! </h1>
+    {% for song in songs %}
+        <h2 style='text-align: center; color: var(--light); font-style: italic;'> {{song.1}} </h2>
+        <p style='text-align: center; color: var(--light);'> By: </p>
+        <h3 style='text-align: center; color: var(--light); font-style: italic;'> {{song.2}} </h3>
+        <div hx-target='this' hx-swap='outerHTML'>
+            <div class='three-button-center'>
+                <button hx-post="{% url 'songs:play_playlistsong' track_uri=song.0 %}"class='styled-button'>Play Song on Your Device</button>
+            </div>
+        </div>
+        <hr>
+    {% endfor %}
+    <div class='three-button-center' style='margin-top: 20px;'>
+        <button hx-post="{% url 'songs:playlist' %}" class='styled-button'>Make another playlist!</button>
+       
+    </div>
+    
+</div>

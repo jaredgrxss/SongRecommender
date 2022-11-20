@@ -323,3 +323,111 @@ form{
     text-decoration: none;
     color: var(--background);
 }
+
+.styled-dropdown{
+    appearance: none;
+    overflow: hidden;
+    background: transparent;
+    width: 6.5em;
+    height: 3em;
+    border: none;
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    padding: 0 1em 0 0;
+    margin: 0;
+    line-height: inherit;
+    outline: none;
+}
+
+
+.styled-main-button {
+    appearance: none;
+    padding: 10px;
+    border: none;
+    text-transform: uppercase;
+    background-color: var(--primary);
+    font-weight: 900;
+    border-radius: 20px;
+    cursor: pointer;
+    color: black;
+    box-shadow: 5px 5px 5px #001e1d;
+    width: 18%;
+    margin-top: 2.5em;
+    height: 4em;
+    transition: 0.5s;
+}
+
+.styled-main-button:hover{
+    box-shadow: none;
+}
+
+.three-button-center{
+    text-align: center;
+
+}
+
+.main-header{
+    text-align: center;
+    font-size: 6.5em;
+    color: var(--light);
+
+}
+
+.main-underheader{
+    font-size: 2.5em;
+    text-align: center;
+    color: var(--light);
+    
+}
+
+.modeReminder{
+    text-align: center;
+    color: var(--light);
+}
+
+
+
+
+/* Splash screen */
+
+.intro {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #001e1d;
+    transition: 1s;
+}
+
+.logo-header {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+}
+
+.trans{
+    position: relative;
+    font-size: 45px;
+    display: inline-block;
+    bottom: -20px;
+    opacity: 0;
+}
+
+.trans.active{
+    bottom: 0;
+    opacity: 1;
+    transition: ease-in-out 0.5s;
+
+}
+
+.trans.fade{
+    bottom: 150px;
+    opacity: 0;
+    transition: ease-in-out 0.5s;
+}

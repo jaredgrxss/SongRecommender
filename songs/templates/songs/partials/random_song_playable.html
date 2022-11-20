@@ -1,0 +1,12 @@
+<div hx-target='this' hx-swap='outerHTML'>
+    <h1 style='text-align: center; color: var(--light);'> You should listen to... </h1>
+    <h3 style='text-align: center; color: var(--light); font-style: italic;'> {{ request.session.track_name}} by {{ request.session.artist_name }}</h3>
+    <div hx-target='this' hx-swap='outerHTML' style='margin-bottom: 10px;'>
+        <div class='three-button-center'>
+        <button hx-post="{% url 'songs:playsong' %}"class='styled-button'>Play Song on Your Device</button>
+        </div>
+    </div>
+    <div class='three-button-center'>
+        <button hx-post="{% url 'songs:random' %}" class='styled-button'>Generate Another!</button>
+    </div>
+</div>
